@@ -113,7 +113,7 @@ form.addEventListener("submit",async(e)=>{
         phone:e.target.phone.value,
         message:e.target.message_string.value
     }
-    await axios.post("http://localhost:3000/api/contact",data)
+    await axios.post("https://tour-management.vercel.app/api/contact",data)
     .then((res)=>{
         window.alert("Your Message has been posted succesfully..")
         location.reload()

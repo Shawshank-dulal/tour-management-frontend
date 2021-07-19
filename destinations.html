@@ -90,7 +90,7 @@
 		firebase.initializeApp(firebaseConfig);
 		firebase.analytics();
 		async function getData() {
-			await axios.get("http://localhost:3000/api/packages")
+			await axios.get("https://tour-management.vercel.app/api/packages")
 				.then((res) => {
 					createTabulationPackages(res.data)
 				})
@@ -164,7 +164,7 @@
 					var id = e.target.id
 					console.log("clicked btn::" + id)
 					var span = document.getElementsByClassName("close")[0];
-					await axios.get("http://localhost:3000/api/packages/" + id)
+					await axios.get("https://tour-management.vercel.app/api/packages/" + id)
 						.then((res) => {
 							var pkg_destination = res.data.destination
 							var destination_input = document.getElementById("destination_input_field")
@@ -201,7 +201,7 @@
 				contact_no: etarget.contact_no_field.value,
 				email: etarget.email.value
 			}
-			await axios.post("http://localhost:3000/api/enquiries", data)
+			await axios.post("https://tour-management.vercel.app/api/enquiries", data)
 				.then((res) => {
 					window.alert("Enquiry Recorded. Our representative will contact you")
 					location.reload()
